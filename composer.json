@@ -1,0 +1,26 @@
+{
+    "name": "hungtrinh/zend-mail-oauth2",
+    "description": "IMAP, POP3 XOAUTH2 authentication for Zend Mail, Zend Framework 1",
+    "keywords": ["zend-mail","zend-mail-oauth2", "xoauth2"],
+    "type": "library",
+    "require": {
+        "php": ">=5.3",
+        "zf1s/zend-mail": "^1.14"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "Zend_Mail": "library/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hungtd",
+            "email": "trinhduchung@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "league/oauth2-google": "^4.0",
+        "thenetworg/oauth2-azure": "^2.1"  
+    }
+}
