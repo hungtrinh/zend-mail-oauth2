@@ -44,7 +44,7 @@ composer require hungtrinh/zend-mail-oauth2
 git checkout https://github.com/hungtrinh/zend-mail-oauth2.git
 cd zend-mail-oauth2
 composer install
-cd zend-mail-oauth2/sample
+cd sample
 php -S 0:8080
 ```
 
