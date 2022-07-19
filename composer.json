@@ -1,7 +1,7 @@
 {
     "name": "hungtrinh/zend-mail-oauth2",
-    "description": "IMAP, POP3 XOAUTH2 authentication for Zend Mail, Zend Framework 1",
-    "keywords": ["zend-mail","zend-mail-oauth2", "xoauth2"],
+    "description": "IMAP, POP3, SMTP work with XOAUTH2 authentication for Zend Mail, Zend Framework 1",
+    "keywords": ["zend-mail","zend-mail-oauth2", "xoauth2", "zend-mail-xoauth2"],
     "type": "library",
     "require": {
         "php": ">=5.3",
