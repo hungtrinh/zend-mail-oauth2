@@ -3,13 +3,13 @@
 
 This package help project use zend-mail (zend Framework 1) work with oauth2 authentication (XOAUTH2)
 
-Tested on Gmail
-
-[Gmail - Authenticate an IMAP, POP or SMTP connection using OAuth](https://developers.google.com/gmail/imap/xoauth2-protocol)
-
-[Azure AD - Authenticate an IMAP, POP or SMTP connection using OAuth](https://docs.microsoft.com/en-us/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth)
-
 PHP 5.3-8.x compatible
+
+Tested on Gmail, Azure AD:
+
+- [Gmail - Authenticate an IMAP, POP or SMTP connection using OAuth](https://developers.google.com/gmail/imap/xoauth2-protocol)
+
+- [Azure AD - Authenticate an IMAP, POP or SMTP connection using OAuth](https://docs.microsoft.com/en-us/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth)
 
 **Table of Contents**
 <!-- TOC -->
