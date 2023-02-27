@@ -1,7 +1,12 @@
 {
     "name": "hungtrinh/zend-mail-oauth2",
     "description": "IMAP, POP3, SMTP work with XOAUTH2 authentication for Zend Mail, Zend Framework 1",
-    "keywords": ["zend-mail","zend-mail-oauth2", "xoauth2", "zend-mail-xoauth2"],
+    "keywords": [
+        "zend-mail",
+        "zend-mail-oauth2",
+        "xoauth2",
+        "zend-mail-xoauth2"
+    ],
     "type": "library",
     "require": {
         "php": ">=5.3",
@@ -21,6 +26,10 @@
     ],
     "require-dev": {
         "league/oauth2-google": "^4.0",
-        "thenetworg/oauth2-azure": "^2.1"  
+        "thenetworg/oauth2-azure": "^2.1"
+    },
+    "suggest": {
+        "league/oauth2-google": "Required for Google OAuth 2.0 client provider",
+        "thenetworg/oauth2-azure": "Required for Azure Active Directory OAuth 2.0 client provider"
     }
 }
