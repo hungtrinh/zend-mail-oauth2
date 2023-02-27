@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
         "php": ">=5.3",
-        "zf1s/zend-mail": "^1.14"
+        "zf1s/zend-mail": "^1.15"
     },
     "license": "MIT",
     "autoload": {
