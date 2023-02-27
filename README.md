@@ -1,5 +1,4 @@
-
-# zend-mail-oauth2 (Zend Framework 1)
+# dzend-mail-oauth2 (Zend Framework 1)
 
 This package help project use zend-mail (zend Framework 1) work with oauth2 authentication (XOAUTH2)
 
@@ -8,10 +7,10 @@ PHP 5.3-8.x compatible
 Tested on Gmail, Azure AD:
 
 - [Gmail - Authenticate an IMAP, POP or SMTP connection using OAuth](https://developers.google.com/gmail/imap/xoauth2-protocol)
-
 - [Azure AD - Authenticate an IMAP, POP or SMTP connection using OAuth](https://docs.microsoft.com/en-us/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth)
 
 **Table of Contents**
+
 <!-- TOC -->
 
 - [Installation](#installation)
@@ -21,6 +20,7 @@ Tested on Gmail, Azure AD:
   - [Retrieve mail over POP3](#retrieve-mail-over-pop3)
   - [Send mail over SMTP](#send-mail-over-smtp)
   - [How to get $oauth2AccessToken](#how-to-get-oauth2accesstoken)
+- [Setup autoload zend-mail-oauth2 for zend framework 1 skeleton project](#setup-autoload-zend-mail-oauth2-for-zend-framework-1-skeleton-project)
 
 <!-- /TOC -->
 
@@ -48,7 +48,7 @@ cd sample
 php -S 0:8080
 ```
 
-Open browser with url <http://localhost:8080>.
+Open browser with url [http://localhost:8080](http://localhost:8080).
 
 ### Retrieve mail over IMAP
 
@@ -130,9 +130,47 @@ $mail->send();
 
 Your current web app need add functional to maintain access_token
 
-- public uri handler oauth2 response from google / azure / other web app <http://your_app_domainoauth2-callback.php> (persist access_token, refresh_token, expire_time to db or other persist storage)
+- public uri handler oauth2 response from google / azure / other web app [http://your_app_domainoauth2-callback.php](http://your_app_domainoauth2-callback.php) (persist access_token, refresh_token, expire_time to db or other persist storage)
 - access_token have short lifetime (1h) so you can (optional)
   - setting cron-job run every 50 minute use refresh_token to get new access_token, after that persist access_token, refresh_token, expire_time to db. other process will use access_token to send or retrieve email
   - Or in process send/retrieve email use expire_time to verify if access_token is expired then use refresh_token to get new access_token
 
 Full guide please see section [Code examples working with gmail (azure mail)](#code-examples-working-with-gmail-azure-mail)
+
+## Setup autoload zend-mail-oauth2 for zend framework 1 skeleton project
+
+Add line `require_once __DIR__ . '/../vendor/autoload.php';` after init Zend_Application like that, `public/index.php` file content
+
+```php
+<?php
+
+// Define path to application directory
+defined('APPLICATION_PATH')
+    || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
+
+// Define application environment
+defined('APPLICATION_ENV')
+    || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
+
+// Ensure library/ is on include_path
+set_include_path(implode(PATH_SEPARATOR, array(
+    realpath(APPLICATION_PATH . '/../library'),
+    get_include_path(),
+)));
+
+/** Zend_Application */
+require_once 'Zend/Application.php';
+
+// Create application, bootstrap, and run
+$application = new Zend_Application(
+    APPLICATION_ENV,
+    APPLICATION_PATH . '/configs/application.ini'
+);
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$application->bootstrap();
+$application->run();
+
+
+````
