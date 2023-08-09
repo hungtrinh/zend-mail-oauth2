@@ -1,4 +1,4 @@
-# dzend-mail-oauth2 (Zend Framework 1)
+# zend-mail-oauth2 (Zend Framework 1)
 
 This package help project use zend-mail (zend Framework 1) work with oauth2 authentication (XOAUTH2)
 
